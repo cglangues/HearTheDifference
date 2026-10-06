@@ -23,7 +23,8 @@ window.STUDY_DATA = {
         { "id": "w-clock", "word": "clock", "hint": "une horloge", "image": "images/everyday-words/clock.svg", "audio": null },
         { "id": "w-fish", "word": "fish", "hint": "un poisson", "image": "images/everyday-words/fish.svg", "audio": null },
         { "id": "w-because", "word": "because", "hint": "I stayed at home ___ it was raining.", "image": null, "audio": null },
-        { "id": "w-often", "word": "often", "hint": "I ___ go to the cinema — about once a week.", "image": null, "audio": null }
+        { "id": "w-often", "word": "often", "hint": "I ___ go to the cinema — about once a week.", "image": null, "audio": null },
+        { "id": "w-muwsfto4-ozfxh", "word": "dog", "hint": "un chien", "image": null, "audio": null }
       ]
     },
     {
