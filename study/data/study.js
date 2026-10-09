@@ -235,7 +235,12 @@ window.STUDY_DATA = {
         { "id": "w-muy4dl0x-111up", "word": "Cette chanson me rappelle nos vacances.", "hint": "This song reminds me of our holiday.", "image": null, "audio": null },
         { "id": "w-muy4dl0x-bpgpp", "word": "manger un curry (argot cockney)", "hint": "to eat a Ruby Murray", "image": null, "audio": null },
         { "id": "w-muy4dl0x-2b8wl", "word": "On a mangé un curry hier soir. (Utilise l’expression cockney.)", "hint": "We ate a Ruby Murray last night.", "image": null, "audio": null },
-        { "id": "w-muy4dl0x-ihse1", "word": "Ça te dit de manger un curry ce soir ? (Utilise l’expression cockney.)", "hint": "Do you fancy eating a Ruby Murray tonight?", "image": null, "audio": null }
+        { "id": "w-muy4dl0x-ihse1", "word": "Ça te dit de manger un curry ce soir ? (Utilise l’expression cockney.)", "hint": "Do you fancy eating a Ruby Murray tonight?", "image": null, "audio": null },
+        { "id": "w-mv0qzejq-bedip", "word": "démarchage/prospection", "hint": "cold calling", "image": null, "audio": null },
+        { "id": "w-mv0r0lti-812va", "word": "disrupt a calm situation to cause trouble", "hint": "to rock the boat", "image": null, "audio": null },
+        { "id": "w-mv0r15u9-6l8cg", "word": "paperasserie", "hint": "red tape", "image": null, "audio": null },
+        { "id": "w-mv0r27co-n58uy", "word": "C'est une perte d'argent", "hint": "It's money down the drain", "image": null, "audio": null },
+        { "id": "w-mv0r3fsz-ymhoh", "word": "il essore les vêtements (tordre pour faire sortir de l'eau)", "hint": "he wrings the clothes", "image": null, "audio": null }
       ]
     }
   ],
