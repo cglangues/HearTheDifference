@@ -77,4 +77,41 @@ document.querySelector('.replay').addEventListener('click',()=>{
  requestAnimationFrame(()=>requestAnimationFrame(()=>curves.forEach(c=>c.style.animation='')));
 });
 </script>
+<style>
+.orbit { height: 580px; }
+.nav-item.expression-orale {
+  top: 455px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 270px;
+  --color: #107f59;
+  --tint: #edf7f1;
+}
+@media (max-width: 640px) {
+  .orbit { height: auto; }
+  .nav-item.expression-orale {
+    position: static;
+    transform: none;
+    width: auto;
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const orbit = document.querySelector('.orbit');
+  if (!orbit || orbit.querySelector('.expression-orale')) return;
+
+  const link = document.createElement('a');
+  link.className = 'nav-item expression-orale';
+  link.href = 'expression-orale.html';
+  link.innerHTML = `
+    <h2>Expression orale <span class="arrow">↗</span></h2>
+    <p>Un cours avec Conor ou des exercices pour pratiquer seul.</p>
+  `;
+  orbit.appendChild(link);
+})();
+</script>
 </body></html>
