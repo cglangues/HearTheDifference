@@ -13,6 +13,17 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Hear the Diff">
 <link rel="stylesheet" href="assets/css/app.css">
+<style>
+.pronunciation-guide{display:block;text-decoration:none;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--line);border-left:6px solid var(--accent);border-radius:var(--radius);padding:22px 24px;margin:0 0 28px;transition:background .15s,border-color .15s}
+.pronunciation-guide:hover{background:var(--accent-soft);border-color:var(--accent-deep)}
+.pronunciation-guide:focus-visible{outline:3px solid var(--accent-deep);outline-offset:4px}
+.pronunciation-guide small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);font-weight:700}
+.pronunciation-guide strong{display:block;font:700 24px var(--display);margin:9px 0}
+.pronunciation-guide p{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0 0 13px}
+.pronunciation-guide .guide-cta{font-size:14px;color:var(--accent-deep);font-weight:700}
+.listening-label{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+#ecoute{scroll-margin-top:24px}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -36,6 +47,13 @@
 ">← Accueil</a>
 </p>
   <section id="start" class="fade">
+    <a class="pronunciation-guide" href="finding-your-voice.html" lang="fr">
+      <small>Comprendre et produire les sons · Guide pratique</small>
+      <strong lang="en">Finding your voice</strong>
+      <p>Explorez les mouvements de la bouche, le voisement et les deux sons « th », avec des exercices à faire à votre rythme.</p>
+      <span class="guide-cta">Ouvrir le guide en anglais · 8 chapitres →</span>
+    </a>
+    <p class="listening-label" id="ecoute" lang="fr">Distinguer les sons à l’oreille</p>
     <h1 class="lede">Des sons proches, des mots différents. Apprenez à <em>faire la difference.</em></h1>
     <p class="blurb"><b id="deck-size">0</b> paires de mots enregistées avec un seul son qui change. Ecoutez un mot et choississez celui que vous avez entendu parmi les deux proposés:</p>
     <div class="groups" id="groups"></div>
