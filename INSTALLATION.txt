@@ -1,0 +1,12 @@
+INSTALLATION
+
+1. Dans GitHub Desktop, ouvrez le dépôt cglangues / HearTheDifference.
+2. Cliquez sur Fetch origin, puis Pull origin si proposé.
+3. Cliquez sur Repository > Show in Explorer.
+4. Copiez les quatre fichiers HTML de ce dossier dans le dossier principal du projet. Acceptez le remplacement des trois fichiers existants.
+5. Ouvrez cg-langues-home.html et cliquez sur Sons et prononciation pour vérifier.
+6. Dans GitHub Desktop, faites Commit to main puis Push origin.
+
+La nouvelle page est prononciation.html. Le quiz et le guide gardent leurs noms de fichiers. Aucun nouveau contenu pédagogique ni changement de manifeste.
+
+Les fichiers existants ont été récupérés sur le site en ligne le 13 octobre 2026. Si vous les avez modifiés sur votre ordinateur sans publier, gardez ces modifications avant de remplacer les fichiers.
