@@ -56,7 +56,7 @@ window.HTD_DECK = {
         "hall"
       ],
       "answer": "hall",
-      "audio": "audio/h/hall-2.mp3"
+      "audio": "audio/h/hall.mp3"
     },
     {
       "id": "h|heat|eat>heat",
@@ -86,7 +86,7 @@ window.HTD_DECK = {
         "all"
       ],
       "answer": "all",
-      "audio": "audio/h/hall.mp3"
+      "audio": "audio/h/all.mp3"
     },
     {
       "id": "h|ill|hill>hill",
@@ -136,7 +136,7 @@ window.HTD_DECK = {
         "ill"
       ],
       "answer": "hill",
-      "audio": "audio/h/hill.mp3"
+      "audio": "audio/h/hill-2.mp3"
     },
     {
       "id": "h|heart|art>heart",
@@ -146,7 +146,7 @@ window.HTD_DECK = {
         "art"
       ],
       "answer": "heart",
-      "audio": "audio/h/heart.mp3"
+      "audio": "audio/h/heart-2.mp3"
     },
     {
       "id": "h|hold|old>hold",
@@ -156,7 +156,7 @@ window.HTD_DECK = {
         "old"
       ],
       "answer": "hold",
-      "audio": "audio/h/hold.mp3"
+      "audio": "audio/h/hold-2.mp3"
     },
     {
       "id": "h|hate|ate>hate",
@@ -166,7 +166,7 @@ window.HTD_DECK = {
         "ate"
       ],
       "answer": "hate",
-      "audio": "audio/h/hate.mp3"
+      "audio": "audio/h/hate-2.mp3"
     },
     {
       "id": "h|I'd|hide>hide",
@@ -186,7 +186,7 @@ window.HTD_DECK = {
         "I'd"
       ],
       "answer": "hide",
-      "audio": "audio/h/hide.mp3"
+      "audio": "audio/h/hide-2.mp3"
     },
     {
       "id": "h|I hate lunch at noon|I ate lunch at noon>I hate lunch at noon",
@@ -226,7 +226,7 @@ window.HTD_DECK = {
         "I hate the cookies"
       ],
       "answer": "I ate the cookies",
-      "audio": null
+      "audio": "audio/h/i-ate-the-cookies.mp3"
     },
     {
       "id": "h|Her hair smells good|Her air smells good>Her air smells good",
@@ -246,7 +246,7 @@ window.HTD_DECK = {
         "Her air smells good"
       ],
       "answer": "Her hair smells good",
-      "audio": null
+      "audio": "audio/h/her-hair-smells-good.mp3"
     },
     {
       "id": "h|I can hit perfectly|I can it perfectly>I can hit perfectly",
@@ -256,7 +256,7 @@ window.HTD_DECK = {
         "I can it perfectly"
       ],
       "answer": "I can hit perfectly",
-      "audio": null
+      "audio": "audio/h/i-can-hit-perfectly.mp3"
     },
     {
       "id": "h|I can hit perfectly|I can it perfectly>I can it perfectly",
@@ -706,7 +706,7 @@ window.HTD_DECK = {
         "heat"
       ],
       "answer": "hit",
-      "audio": "audio/h/hit.mp3"
+      "audio": "audio/h/hit-2.mp3"
     },
     {
       "id": "i|live|leave>live",
@@ -786,7 +786,7 @@ window.HTD_DECK = {
         "heat"
       ],
       "answer": "heat",
-      "audio": "audio/h/heat.mp3"
+      "audio": "audio/h/heat-2.mp3"
     },
     {
       "id": "i|live|leave>leave",
@@ -970,17 +970,17 @@ window.HTD_DECK = {
     }
   ],
   "words": {
-    "eat": "audio/ai/eat.mp3",
-    "it": "audio/ai/it.mp3",
-    "ill": "audio/ai/ill.mp3",
-    "art": "audio/ai/art.mp3",
-    "old": "audio/ai/old.mp3",
-    "ate": "audio/ai/ate.mp3",
-    "i'd": "audio/ai/i-d.mp3",
-    "i ate the cookies": "audio/ai/i-ate-the-cookies.mp3",
-    "her hair smells good": "audio/ai/her-hair-smells-good.mp3",
-    "i can hit perfectly": "audio/ai/i-can-hit-perfectly.mp3",
-    "i can it perfectly": "audio/ai/i-can-it-perfectly.mp3",
+    "eat": "audio/words/eat.mp3",
+    "it": "audio/words/it.mp3",
+    "ill": "audio/words/ill.mp3",
+    "art": "audio/words/art.mp3",
+    "old": "audio/words/old.mp3",
+    "ate": "audio/words/ate.mp3",
+    "i'd": "audio/words/i-d.mp3",
+    "i ate the cookies": "audio/words/i-ate-the-cookies.mp3",
+    "her hair smells good": "audio/words/her-hair-smells-good.mp3",
+    "i can hit perfectly": "audio/words/i-can-hit-perfectly.mp3",
+    "i can it perfectly": "audio/words/i-can-it-perfectly.mp3",
     "the hill child needs help": "audio/ai/the-hill-child-needs-help.mp3",
     "i study art at school": "audio/ai/i-study-art-at-school.mp3",
     "dis is my book.": "audio/ai/dis-is-my-book.mp3",
@@ -988,17 +988,17 @@ window.HTD_DECK = {
     "dough it rained, we walked.": "audio/ai/dough-it-rained-we-walked.mp3",
     "though it rained, we walked.": "audio/ai/though-it-rained-we-walked.mp3",
     "the beat is hard.": "audio/ai/the-beat-is-hard.mp3",
-    "i": "audio/ai/i.mp3",
+    "i": "audio/words/i.mp3",
     "lunch": "audio/ai/lunch.mp3",
     "at": "audio/ai/at.mp3",
     "noon": "audio/ai/noon.mp3",
-    "the": "audio/ai/the.mp3",
-    "cookies": "audio/ai/cookies.mp3",
-    "her": "audio/ai/her.mp3",
-    "smells": "audio/ai/smells.mp3",
-    "good": "audio/ai/good.mp3",
-    "can": "audio/ai/can.mp3",
-    "perfectly": "audio/ai/perfectly.mp3",
+    "the": "audio/words/the.mp3",
+    "cookies": "audio/words/cookies.mp3",
+    "her": "audio/words/her.mp3",
+    "smells": "audio/words/smells.mp3",
+    "good": "audio/words/good.mp3",
+    "can": "audio/words/can.mp3",
+    "perfectly": "audio/words/perfectly.mp3",
     "child": "audio/ai/child.mp3",
     "needs": "audio/ai/needs.mp3",
     "help": "audio/ai/help.mp3",
@@ -1041,6 +1041,16 @@ window.HTD_DECK = {
     "airy": "audio/words/airy.mp3",
     "hair": "audio/words/hair.mp3",
     "all": "audio/words/all.mp3",
-    "hall": "audio/words/hall.mp3"
+    "hall": "audio/words/hall.mp3",
+    "air": "audio/words/air.mp3",
+    "heart": "audio/words/heart.mp3",
+    "hate": "audio/words/hate.mp3",
+    "heat": "audio/words/heat.mp3",
+    "her air smells good": "audio/words/her-air-smells-good.mp3",
+    "hide": "audio/words/hide.mp3",
+    "hill": "audio/words/hill.mp3",
+    "hit": "audio/words/hit.mp3",
+    "hold": "audio/words/hold.mp3",
+    "i hate the cookies": "audio/words/i-hate-the-cookies.mp3"
   }
 };
