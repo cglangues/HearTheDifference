@@ -266,7 +266,7 @@ window.HTD_DECK = {
         "I can it perfectly"
       ],
       "answer": "I can it perfectly",
-      "audio": null
+      "audio": "audio/h/i-can-it-perfectly.mp3"
     },
     {
       "id": "h|The Hill child needs help|The ill child needs help>The Hill child needs help",
@@ -276,7 +276,7 @@ window.HTD_DECK = {
         "The ill child needs help"
       ],
       "answer": "The Hill child needs help",
-      "audio": null
+      "audio": "audio/h/the-hill-child-needs-help.mp3"
     },
     {
       "id": "h|The Hill child needs help|The ill child needs help>The ill child needs help",
@@ -296,7 +296,7 @@ window.HTD_DECK = {
         "I study art at school"
       ],
       "answer": "I study art at school",
-      "audio": null
+      "audio": "audio/h/i-study-art-at-school.mp3"
     },
     {
       "id": "h|I study heart at schools|I study art at school>I study heart at schools",
@@ -506,7 +506,7 @@ window.HTD_DECK = {
         "these"
       ],
       "answer": "z’s",
-      "audio": "audio/th/zs.mp3"
+      "audio": "audio/th/z-s.mp3"
     },
     {
       "id": "th|zair|their>zair",
@@ -606,7 +606,7 @@ window.HTD_DECK = {
         "This is my book."
       ],
       "answer": "Dis is my book.",
-      "audio": null
+      "audio": "audio/th/dis-is-my-book.mp3"
     },
     {
       "id": "th|We saw dem.|We saw them.>We saw dem.",
@@ -846,7 +846,7 @@ window.HTD_DECK = {
         "The beat is hard."
       ],
       "answer": "The beat is hard.",
-      "audio": null
+      "audio": "audio/i/the-beat-is-hard.mp3"
     },
     {
       "id": "h|I hit the pizza|I heat the pizza.>I heat the pizza.",
@@ -867,16 +867,6 @@ window.HTD_DECK = {
       ],
       "answer": "She lives there",
       "audio": "audio/th/she-lives-there.mp3"
-    },
-    {
-      "id": "i|The slip is dirty.|The sleep is long.>The sleep is long.",
-      "group": "i",
-      "options": [
-        "The slip is dirty.",
-        "The sleep is long."
-      ],
-      "answer": "The sleep is long.",
-      "audio": "audio/i/the-sleep-is-long.mp3"
     },
     {
       "id": "i|Please fill the cup.|Please feel the cup.>Please feel the cup.",
@@ -939,16 +929,6 @@ window.HTD_DECK = {
       "audio": "audio/th/she-leaves-there.mp3"
     },
     {
-      "id": "i|The slip is dirty.|The sleep is long.>The slip is dirty.",
-      "group": "i",
-      "options": [
-        "The slip is dirty.",
-        "The sleep is long."
-      ],
-      "answer": "The slip is dirty.",
-      "audio": "audio/i/the-slip-is-dirty.mp3"
-    },
-    {
       "id": "i|Please fill the cup.|Please feel the cup.>Please fill the cup.",
       "group": "i",
       "options": [
@@ -981,17 +961,17 @@ window.HTD_DECK = {
     "her hair smells good": "audio/words/her-hair-smells-good.mp3",
     "i can hit perfectly": "audio/words/i-can-hit-perfectly.mp3",
     "i can it perfectly": "audio/words/i-can-it-perfectly.mp3",
-    "the hill child needs help": "audio/ai/the-hill-child-needs-help.mp3",
-    "i study art at school": "audio/ai/i-study-art-at-school.mp3",
-    "dis is my book.": "audio/ai/dis-is-my-book.mp3",
-    "day will help us.": "audio/ai/day-will-help-us.mp3",
+    "the hill child needs help": "audio/words/the-hill-child-needs-help.mp3",
+    "i study art at school": "audio/words/i-study-art-at-school.mp3",
+    "dis is my book.": "audio/words/dis-is-my-book.mp3",
+    "day will help us.": "audio/words/day-will-help-us.mp3",
     "dough it rained, we walked.": "audio/ai/dough-it-rained-we-walked.mp3",
     "though it rained, we walked.": "audio/ai/though-it-rained-we-walked.mp3",
-    "the beat is hard.": "audio/ai/the-beat-is-hard.mp3",
+    "the beat is hard.": "audio/words/the-beat-is-hard.mp3",
     "i": "audio/words/i.mp3",
-    "lunch": "audio/ai/lunch.mp3",
-    "at": "audio/ai/at.mp3",
-    "noon": "audio/ai/noon.mp3",
+    "lunch": "audio/words/lunch.mp3",
+    "at": "audio/words/at.mp3",
+    "noon": "audio/words/noon.mp3",
     "the": "audio/words/the.mp3",
     "cookies": "audio/words/cookies.mp3",
     "her": "audio/words/her.mp3",
@@ -999,44 +979,44 @@ window.HTD_DECK = {
     "good": "audio/words/good.mp3",
     "can": "audio/words/can.mp3",
     "perfectly": "audio/words/perfectly.mp3",
-    "child": "audio/ai/child.mp3",
-    "needs": "audio/ai/needs.mp3",
-    "help": "audio/ai/help.mp3",
-    "study": "audio/ai/study.mp3",
-    "schools": "audio/ai/schools.mp3",
-    "school": "audio/ai/school.mp3",
-    "better": "audio/ai/better.mp3",
-    "go": "audio/ai/go.mp3",
-    "now": "audio/ai/now.mp3",
-    "hyde": "audio/ai/hyde.mp3",
-    "is": "audio/ai/is.mp3",
-    "my": "audio/ai/my.mp3",
-    "book": "audio/ai/book.mp3",
-    "we": "audio/ai/we.mp3",
-    "saw": "audio/ai/saw.mp3",
-    "dem": "audio/ai/dem.mp3",
+    "child": "audio/words/child.mp3",
+    "needs": "audio/words/needs.mp3",
+    "help": "audio/words/help.mp3",
+    "study": "audio/words/study.mp3",
+    "schools": "audio/words/schools.mp3",
+    "school": "audio/words/school.mp3",
+    "better": "audio/words/better.mp3",
+    "go": "audio/words/go.mp3",
+    "now": "audio/words/now.mp3",
+    "hyde": "audio/words/hyde.mp3",
+    "is": "audio/words/is.mp3",
+    "my": "audio/words/my.mp3",
+    "book": "audio/words/book.mp3",
+    "we": "audio/words/we.mp3",
+    "saw": "audio/words/saw.mp3",
+    "dem": "audio/words/dem.mp3",
     "met": "audio/ai/met.mp3",
     "teacher": "audio/ai/teacher.mp3",
-    "will": "audio/ai/will.mp3",
-    "us": "audio/ai/us.mp3",
+    "will": "audio/words/will.mp3",
+    "us": "audio/words/us.mp3",
     "rained": "audio/ai/rained.mp3",
     "walked": "audio/ai/walked.mp3",
-    "zese": "audio/ai/zese.mp3",
-    "apples": "audio/ai/apples.mp3",
-    "are": "audio/ai/are.mp3",
+    "zese": "audio/words/zese.mp3",
+    "apples": "audio/words/apples.mp3",
+    "are": "audio/words/are.mp3",
     "know": "audio/ai/know.mp3",
     "parents": "audio/ai/parents.mp3",
-    "small": "audio/ai/small.mp3",
-    "deep": "audio/ai/deep.mp3",
-    "hard": "audio/ai/hard.mp3",
-    "pizza": "audio/ai/pizza.mp3",
+    "small": "audio/words/small.mp3",
+    "deep": "audio/words/deep.mp3",
+    "hard": "audio/words/hard.mp3",
+    "pizza": "audio/words/pizza.mp3",
     "she": "audio/ai/she.mp3",
     "lives": "audio/ai/lives.mp3",
     "leaves": "audio/ai/leaves.mp3",
     "dirty": "audio/ai/dirty.mp3",
     "long": "audio/ai/long.mp3",
-    "please": "audio/ai/please.mp3",
-    "cup": "audio/ai/cup.mp3",
+    "please": "audio/words/please.mp3",
+    "cup": "audio/words/cup.mp3",
     "hairy": "audio/words/hairy.mp3",
     "airy": "audio/words/airy.mp3",
     "hair": "audio/words/hair.mp3",
@@ -1051,6 +1031,59 @@ window.HTD_DECK = {
     "hill": "audio/words/hill.mp3",
     "hit": "audio/words/hit.mp3",
     "hold": "audio/words/hold.mp3",
-    "i hate the cookies": "audio/words/i-hate-the-cookies.mp3"
+    "i hate the cookies": "audio/words/i-hate-the-cookies.mp3",
+    "i hate lunch at noon": "audio/words/i-hate-lunch-at-noon.mp3",
+    "i ate lunch at noon": "audio/words/i-ate-lunch-at-noon.mp3",
+    "i study heart at schools": "audio/words/i-study-heart-at-schools.mp3",
+    "i'd better go now": "audio/words/i-d-better-go-now.mp3",
+    "hyde better go now": "audio/words/hyde-better-go-now.mp3",
+    "the ill child needs help": "audio/words/the-ill-child-needs-help.mp3",
+    "broder": "audio/words/broder.mp3",
+    "brother": "audio/words/brother.mp3",
+    "dare": "audio/words/dare.mp3",
+    "there": "audio/words/there.mp3",
+    "day": "audio/words/day.mp3",
+    "they": "audio/words/they.mp3",
+    "they will help us.": "audio/words/they-will-help-us.mp3",
+    "den": "audio/words/den.mp3",
+    "then": "audio/words/then.mp3",
+    "dis": "audio/words/dis.mp3",
+    "this": "audio/words/this.mp3",
+    "this is my book.": "audio/words/this-is-my-book.mp3",
+    "dough": "audio/words/dough.mp3",
+    "though": "audio/words/though.mp3",
+    "father": "audio/words/father.mp3",
+    "fazer": "audio/words/fazer.mp3",
+    "their": "audio/words/their.mp3",
+    "zair": "audio/words/zair.mp3",
+    "them": "audio/words/them.mp3",
+    "zem": "audio/words/zem.mp3",
+    "these": "audio/words/these.mp3",
+    "z's": "audio/words/z-s.mp3",
+    "bit": "audio/words/bit.mp3",
+    "beat": "audio/words/beat.mp3",
+    "fill": "audio/words/fill.mp3",
+    "feel": "audio/words/feel.mp3",
+    "live": "audio/words/live.mp3",
+    "leave": "audio/words/leave.mp3",
+    "pit": "audio/words/pit.mp3",
+    "peat": "audio/words/peat.mp3",
+    "ship": "audio/words/ship.mp3",
+    "sheep": "audio/words/sheep.mp3",
+    "sit": "audio/words/sit.mp3",
+    "seat": "audio/words/seat.mp3",
+    "slip": "audio/words/slip.mp3",
+    "sleep": "audio/words/sleep.mp3",
+    "we saw dem.": "audio/words/we-saw-dem.mp3",
+    "we saw them.": "audio/words/we-saw-them.mp3",
+    "zese apples are good.": "audio/words/zese-apples-are-good.mp3",
+    "these apples are good.": "audio/words/these-apples-are-good.mp3",
+    "please fill the cup.": "audio/words/please-fill-the-cup.mp3",
+    "please feel the cup.": "audio/words/please-feel-the-cup.mp3",
+    "the bit is hard.": "audio/words/the-bit-is-hard.mp3",
+    "the pit is deep.": "audio/words/the-pit-is-deep.mp3",
+    "the peat is deep.": "audio/words/the-peat-is-deep.mp3",
+    "the ship is small.": "audio/words/the-ship-is-small.mp3",
+    "the sheep is small.": "audio/words/the-sheep-is-small.mp3"
   }
 };
