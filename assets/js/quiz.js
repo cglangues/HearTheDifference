@@ -21,7 +21,7 @@
   /* ---------------------------------- spaced-repetition state (persisted) */
 
   var KEY = 'en-srs-v2'; // unchanged key: existing learners keep their schedule
-  var DAY = 86400000, MIN_EASE = 1.3, MAX_EASE = 3.0, AGAIN_GAP = 0, HARD_GAP = 2, NEW_CAP = 20;
+  var DAY = 86400000, MIN_EASE = 1.3, MAX_EASE = 3.0, AGAIN_GAP = 0, HARD_GAP = 2, NEW_CAP = 8;
   var SCHED = {}, NO_PERSIST = false;
   try { var raw = localStorage.getItem(KEY); if (raw) SCHED = JSON.parse(raw); } catch (e) { NO_PERSIST = true; }
 
@@ -141,8 +141,8 @@
     S.pool.forEach(function (c) { S.stats.per[c.group] = { right: 0, total: 0 }; });
     var n = now();
     S.reviewQueue = S.pool.filter(function (c) { var e = SCHED[cidOf(c)]; return e && e.due <= n; })
-      .sort(function (a, b) { return SCHED[cidOf(a)].due - SCHED[cidOf(b)].due; });
-    S.newQueue = shuffle(S.pool.filter(function (c) { return !SCHED[cidOf(c)]; })).slice(0, NEW_CAP);
+      .sort(function (a, b) { return SCHED[cidOf(a)].due - SCHED[cidOf(b)].due; }).slice(0, 16);
+    S.newQueue = shuffle(S.pool.filter(function (c) { return !SCHED[cidOf(c)]; })).slice(0, Math.min(NEW_CAP, 16 - S.reviewQueue.length));
     show('quiz');
     if (S.srs) { serveNext(); }
     else {
@@ -152,6 +152,7 @@
   }
 
   function nextCard() {
+if (S.stats.done >= 16) return null;
     if (S.learn.length) {
       var i = S.learn.findIndex(function (x) { return x.at <= S.pos; });
       if (i >= 0) return S.learn.splice(i, 1)[0].c;
