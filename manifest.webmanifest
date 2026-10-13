@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Hear the Difference",
-  "short_name": "Hear the Diff",
+  "name": "Anglais en autonomie",
+  "short_name": "Anglais",
   "description": "A listening drill on English minimal pairs: /h/, voiced /ð/, and long vs short i.",
   "lang": "en",
   "start_url": "./cg-langues-home.html",
