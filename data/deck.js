@@ -56,7 +56,7 @@ window.HTD_DECK = {
         "hall"
       ],
       "answer": "hall",
-      "audio": "audio/h/hall.mp3"
+      "audio": "audio/h/hall-2.mp3"
     },
     {
       "id": "h|heat|eat>heat",
@@ -957,10 +957,19 @@ window.HTD_DECK = {
       ],
       "answer": "Please fill the cup.",
       "audio": "audio/i/please-fill-the-cup.mp3"
+    },
+    {
+      "id": "card-muwoi2xa-703xm8",
+      "group": "h",
+      "options": [
+        "hairy",
+        "airy"
+      ],
+      "answer": "hairy",
+      "audio": "audio/h/hairy.mp3"
     }
   ],
   "words": {
-    "hair": "audio/ai/hair.mp3",
     "eat": "audio/ai/eat.mp3",
     "it": "audio/ai/it.mp3",
     "ill": "audio/ai/ill.mp3",
@@ -1027,6 +1036,11 @@ window.HTD_DECK = {
     "dirty": "audio/ai/dirty.mp3",
     "long": "audio/ai/long.mp3",
     "please": "audio/ai/please.mp3",
-    "cup": "audio/ai/cup.mp3"
+    "cup": "audio/ai/cup.mp3",
+    "hairy": "audio/words/hairy.mp3",
+    "airy": "audio/words/airy.mp3",
+    "hair": "audio/words/hair.mp3",
+    "all": "audio/words/all.mp3",
+    "hall": "audio/words/hall.mp3"
   }
 };
