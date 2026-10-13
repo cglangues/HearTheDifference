@@ -154,7 +154,12 @@ document.querySelector('.replay').addEventListener('click',()=>{
 })();
 </script>
 <div id="analytics-choice" hidden
-     style="padding:16px; background:#f3f3f3; border-radius:12px; margin:16px;">
+     style="position:fixed; bottom:16px; left:16px; right:16px;
+       z-index:10000; max-width:600px; margin:0 auto;
+       padding:20px; background:#ffffff; color:#222;
+       border:1px solid #ddd; border-radius:12px;
+       box-shadow:0 4px 24px rgba(0,0,0,0.2);
+       max-height:80vh; overflow-y:auto;">
   <p>
     Acceptez-vous que CG Langues mesure votre utilisation de
     l’application avec PostHog pour l’améliorer ?
