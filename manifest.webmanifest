@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Anglais en autonomie",
-  "short_name": "Anglais",
+  "name": "CG Langues: Anglais en autonomie",
+  "short_name": "Anglais en autonomie",
   "description": "A listening drill on English minimal pairs: /h/, voiced /ð/, and long vs short i.",
   "lang": "en",
   "start_url": "./cg-langues-home.html",
