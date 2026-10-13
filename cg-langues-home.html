@@ -30,6 +30,17 @@ dialog{width:min(490px,calc(100% - 32px));padding:34px;border:1px solid #e4e8e4;
 @media(max-width:900px) and (min-width:641px){.nav-item.pronunciation{width:195px}.nav-item.pronunciation h2{font-size:16px}.nav-item.begin{width:195px}.nav-item.begin h2{font-size:16px}}
 @media(max-width:640px){.nav-item.pronunciation{width:auto}.nav-item.pronunciation h2{font-size:16px}.nav-item.begin{position:static;transform:none;width:auto;grid-row:1;grid-column:1/-1;min-height:54px;text-align:center}.nav-item.begin:hover,.nav-item.begin.active,.nav-item.begin:focus-visible{transform:translateY(-3px)}.art{top:auto;grid-row:2}.pronunciation,.lecture{grid-row:3}.grammaire,.vocabulaire{grid-row:4}.nav-item.begin h2{font-size:16px}dialog{padding:26px 22px}dialog h2{font-size:29px}}
 </style>
+<script type="text/plain" id="posthog-code">
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="du fu pu gu bu init Vu Gu zu Uu Ku el Wu Xu qu rc oc ac lc uc cc capture getExtension Qu cu fc calculateEventProperties dc register register_once register_for_session unregister unregister_for_session bc Bu gc getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys onActiveMatchingSurveysChanged renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset wc shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty mc ec createPersonProfile setInternalOrTestUser yc Su wu opt_in_capturing opt_out_capturing ku has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Yu debug il Os getPageViewId captureTraceFeedback captureTraceMetric Ou".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+   posthog.init('phc_xAhpJJ7HpMj2uE9wcegw9gFBys5BnqMBgisodbckjsi8', {
+    api_host: 'https://eu.i.posthog.com',
+    defaults: '2026-05-30',
+    person_profiles: 'identified_only',
+    autocapture: false,
+    capture_pageview: true,
+    disable_session_recording: true
+});
+</script>
 </head>
 <body>
 <div class="shell">
@@ -140,6 +151,59 @@ document.querySelector('.replay').addEventListener('click',()=>{
     <p>Un cours avec Conor ou des exercices pour pratiquer seul.</p>
   `;
   orbit.appendChild(link);
+})();
+</script>
+<div id="analytics-choice" hidden
+     style="padding:16px; background:#f3f3f3; border-radius:12px; margin:16px;">
+  <p>
+    Acceptez-vous que CG Langues mesure votre utilisation de
+    l’application avec PostHog pour l’améliorer ?
+    Vous pouvez refuser et continuer à utiliser l’application.
+  </p>
+  <button type="button" id="analytics-accept">Accepter</button>
+  <button type="button" id="analytics-refuse">Refuser</button>
+</div>
+
+<button type="button" id="analytics-settings">
+  Modifier mon choix de suivi
+</button>
+
+<script>
+(function () {
+  const key = 'cg-analytics-consent';
+  const panel = document.getElementById('analytics-choice');
+  let started = false;
+
+  function startAnalytics() {
+    if (started) return;
+    started = true;
+    const script = document.createElement('script');
+    script.textContent =
+      document.getElementById('posthog-code').textContent;
+    document.head.appendChild(script);
+  }
+
+  const choice = localStorage.getItem(key);
+
+  if (choice === 'accepted') startAnalytics();
+  panel.hidden = choice !== null;
+
+  document.getElementById('analytics-accept').onclick = function () {
+    localStorage.setItem(key, 'accepted');
+    panel.hidden = true;
+    startAnalytics();
+  };
+
+  document.getElementById('analytics-refuse').onclick = function () {
+    localStorage.setItem(key, 'refused');
+    if (window.posthog) window.posthog.opt_out_capturing();
+    location.reload();
+  };
+
+  document.getElementById('analytics-settings').onclick = function () {
+    panel.hidden = false;
+    panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
 })();
 </script>
 </body></html>
