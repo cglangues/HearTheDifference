@@ -17,7 +17,81 @@
   var deckId = new URLSearchParams(location.search).get('deck');
   var deck = data && S.deckById(data, deckId);
   var player = $('player');
-  var NEW_CAP = 20, AGAIN_GAP = 0, HARD_GAP = 2;
+ var NEW_PER_DAY = 8, NEW_BANK_CAP = 16;
+var AGAIN_GAP = 0, HARD_GAP = 2;
+var NEW_BANK_KEY = 'study-new-card-budget-v1';
+var memoryBank = null;
+
+function localDay() {
+  var d = new Date();
+  return Math.floor(
+    Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000
+  );
+}
+
+function saveBank(bank) {
+  memoryBank = bank;
+  try {
+    localStorage.setItem(NEW_BANK_KEY, JSON.stringify(bank));
+  } catch (e) {
+    S.progress.persisted = false;
+  }
+}
+
+function newBank() {
+  var bank = memoryBank;
+  var today = localDay();
+
+  try {
+    var raw = localStorage.getItem(NEW_BANK_KEY);
+    if (raw) bank = JSON.parse(raw);
+  } catch (e) {}
+
+  if (
+    !bank ||
+    !Number.isInteger(bank.day) ||
+    !Number.isInteger(bank.remaining) ||
+    bank.remaining < 0 ||
+    bank.remaining > NEW_BANK_CAP
+  ) {
+    bank = { day: today, remaining: NEW_PER_DAY };
+  } else if (today > bank.day) {
+    bank = {
+      day: today,
+      remaining: Math.min(
+        NEW_BANK_CAP,
+        bank.remaining + (today - bank.day) * NEW_PER_DAY
+      )
+    };
+  }
+
+  saveBank(bank);
+  return bank;
+}
+
+function admitNew(c) {
+  S.progress.load();
+
+  if (S.progress.get(deck, c)) return true;
+
+  var bank = newBank();
+  if (!bank.remaining) return false;
+
+  bank.remaining--;
+  saveBank(bank);
+
+  S.progress.all[S.progress.key(deck, c)] = {
+    ivl: 0,
+    ease: 2.5,
+    reps: 0,
+    lapses: 0,
+    state: 'learning',
+    due: Date.now()
+  };
+
+  S.progress.save();
+  return true;
+}
   var liveURLs = []; // object URLs for draft media on the current card
 
   S.registerOffline();
@@ -63,7 +137,10 @@
     $('lede').textContent = deck.title || 'Cards';
     $('deckblurb').textContent = deck.blurb || '';
     var n = S.progress.counts(deck);
-    $('dueline').innerHTML = '<b>' + CARDS.length + '</b> cards · Due now <b>' + n.due + '</b> · New <b>' + n.fresh + '</b>';
+    $('dueline').innerHTML =
+  '<b>' + CARDS.length + '</b> cards · Due now <b>' +
+  n.due + '</b> · New today <b>' +
+  Math.min(n.fresh, newBank().remaining) + '</b>';
 
     var seg = $('mode');
     seg.innerHTML = '';
@@ -90,31 +167,65 @@
   /* -------------------------------------------------------------- session */
 
   function begin() {
+S.progress.load();
     st.srs = $('srs').checked;
     st.pool = CARDS.slice();
     st.pos = 0; st.learn = []; st.done = 0;
     var now = Date.now();
     st.reviewQueue = st.pool.filter(function (c) { var e = S.progress.get(deck, c); return e && e.due <= now; })
       .sort(function (a, b) { return S.progress.get(deck, a).due - S.progress.get(deck, b).due; });
-    st.newQueue = shuffle(st.pool.filter(function (c) { return !S.progress.get(deck, c); })).slice(0, NEW_CAP);
-    st.order = shuffle(st.pool.slice()); st.idx = 0;
+    var fresh = shuffle(st.pool.filter(function (c) {
+  return !S.progress.get(deck, c);
+})).slice(0, newBank().remaining);
+
+st.newQueue = fresh.slice();
+
+st.order = shuffle(
+  st.pool.filter(function (c) {
+    return !!S.progress.get(deck, c);
+  }).concat(fresh)
+);
+
+st.idx = 0;
     $('pill').textContent = deck.title || '';
     show('study');
     prefetch();
     next();
   }
 
-  function pick() {
-    if (!st.srs) return st.idx < st.order.length ? st.order[st.idx++] : null;
-    if (st.learn.length) {
-      var i = st.learn.findIndex(function (x) { return x.at <= st.pos; });
-      if (i >= 0) return st.learn.splice(i, 1)[0].c;
+function pick() {
+  if (!st.srs) {
+    while (st.idx < st.order.length) {
+      var candidate = st.order[st.idx++];
+      if (admitNew(candidate)) return candidate;
     }
-    if (st.reviewQueue.length) return st.reviewQueue.shift();
-    if (st.newQueue.length) return st.newQueue.shift();
-    if (st.learn.length) { st.learn.sort(function (a, b) { return a.at - b.at; }); return st.learn.shift().c; }
     return null;
   }
+
+  if (st.learn.length) {
+    var i = st.learn.findIndex(function (x) {
+      return x.at <= st.pos;
+    });
+
+    if (i >= 0) return st.learn.splice(i, 1)[0].c;
+  }
+
+  if (st.reviewQueue.length) return st.reviewQueue.shift();
+
+  while (st.newQueue.length) {
+    var fresh = st.newQueue.shift();
+    if (admitNew(fresh)) return fresh;
+  }
+
+  if (st.learn.length) {
+    st.learn.sort(function (a, b) {
+      return a.at - b.at;
+    });
+    return st.learn.shift().c;
+  }
+
+  return null;
+}
 
   function next() {
     var c = pick();
@@ -401,7 +512,12 @@
       line += soonest < Infinity ? ' Next review in ' + S.fmtDays((soonest - now) / S.DAY) + '.' : '';
     }
     if (!S.progress.persisted) line += ' Progress could not be saved in this browser.';
-    $('rline').textContent = line;
+var n = S.progress.counts(deck);
+
+if (n.fresh && !newBank().remaining) {
+  line += ' New cards are finished for today. More will be available tomorrow.';
+}    
+$('rline').textContent = line;
   }
 
   /* Once installed, pictures are saved as they are shown. Opening a deck
