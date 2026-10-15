@@ -186,11 +186,43 @@
     return el('div', asFront && GAP.test(text) ? 'gap' : 'hint', text);
   }
 
+  // CSV backs keep the main answer on the first line and supporting text
+  // below it. Use textContent so imported text is never treated as markup.
+  function answerParts(text) {
+    var lines = String(text || '').replace(/\r\n?/g, '\n').trim().split('\n');
+    return { main: lines.shift() || '', details: lines.join('\n').trim() };
+  }
+
+  function answerDetails(parts) {
+    if (!parts.details) return null;
+    var details = el('div', 'card-answer-details');
+    parts.details.split(/\n[\t ]*\n/).forEach(function (paragraph) {
+      paragraph.split(/\n(?=Also possible:)/i).forEach(function (text) {
+        if (!text.trim()) return;
+        var alternative = /^Also possible:/i.test(text.trim());
+        details.appendChild(el('p', alternative ? 'card-alternative' : 'card-example', text.trim()));
+      });
+    });
+    return details;
+  }
+
+  function answerEl(parts, includeDetails) {
+    var box = el('div', 'card-answer');
+    var main = el('div', 'big card-answer-main', parts.main);
+    if (parts.main.length > 38) main.classList.add('is-sentence');
+    box.appendChild(main);
+    if (includeDetails) {
+      var details = answerDetails(parts);
+      if (details) box.appendChild(details);
+    }
+    return box;
+  }
+
   function filledHint(c) {
     if (!GAP.test(c.hint)) return hintEl(c.hint);
     var parts = c.hint.split(GAP), d = el('div', 'gap');
     parts.forEach(function (part, i) {
-      if (i) d.appendChild(el('b', '', c.word));
+      if (i) d.appendChild(el('b', '', answerParts(c.word).main));
       d.appendChild(document.createTextNode(part));
     });
     return d;
@@ -199,17 +231,20 @@
   /* Fills the two sides of the card. Both are built when the card is dealt,
    * so the picture has loaded by the time the card turns over. */
   function renderPicture(front, back, c) {
+    var answer = answerParts(c.word);
     if (st.mode === 'picture') {
       if (c.image) front.appendChild(picture(c, 'Picture to name'));
       else front.appendChild(hintEl(c.hint, true));
-      back.appendChild(el('div', 'big', c.word));
+      back.appendChild(answerEl(answer, true));
       if (c.hint) back.appendChild(filledHint(c));
       if (c.audio) back.appendChild(sayButton(c));
     } else {
-      front.appendChild(el('div', 'big', c.word));
+      front.appendChild(answerEl(answer, false));
       if (c.audio) front.appendChild(sayButton(c));
-      if (c.image) back.appendChild(picture(c, c.word));
+      if (c.image) back.appendChild(picture(c, answer.main));
       if (c.hint) back.appendChild(filledHint(c));
+      var details = answerDetails(answer);
+      if (details) back.appendChild(details);
     }
     front.appendChild(el('div', 'tap', 'Tap to turn the card over'));
     back.appendChild(el('div', 'tap', 'Tap to turn it back'));

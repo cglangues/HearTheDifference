@@ -98,3 +98,26 @@
 .sheetrow .file{font-size:12.5px;color:var(--ink-soft);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .sheetrow .file b{color:var(--ink);font-weight:600}
 code{font-size:.92em}
+
+/* Priority collections: existing deck links and progress stay intact. */
+.essential-collection[hidden],.other-collections[hidden]{display:none}
+.collection-intro{font-size:14px;color:var(--ink-soft);line-height:1.5;margin:0 0 16px}
+.essential-decks{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.essential-decks .dcard{border-color:var(--accent-deep);padding:22px;background:var(--paper-2)}
+.deck-practise{display:inline-block;margin-top:16px;padding:9px 16px;border-radius:8px;background:var(--accent-deep);color:var(--paper-2);font-size:14px;font-weight:700}
+.other-collections{margin-top:30px;border-top:1.5px solid var(--line);padding-top:18px}
+.other-collections summary{cursor:pointer;font-family:var(--display);font-size:21px;font-weight:600;line-height:1.5}
+.other-collections summary:focus-visible{outline:2px solid var(--accent-deep);outline-offset:5px;border-radius:4px}
+.collection-count{font-family:inherit;font-size:14px;color:var(--ink-soft);font-weight:400}
+.other-collections .decks{margin-top:18px}
+
+/* Answers and examples are separate elements, never one oversized block. */
+.face .big,.flipcard .big,.face .hint,.flipcard .hint{white-space:pre-line;overflow-wrap:anywhere}
+.card-answer{width:100%;max-width:100%}
+.card-answer-main{overflow-wrap:anywhere}
+.face .card-answer-main.is-sentence,.flipcard .card-answer-main.is-sentence{font-size:clamp(25px,6vw,34px);line-height:1.3;letter-spacing:0}
+.card-answer-details{width:100%;max-width:40ch;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.card-answer .card-answer-details{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.card-example{margin:0;font-family:var(--display);font-size:20px;font-style:italic;font-weight:400;line-height:1.5;color:var(--ink-soft);white-space:pre-line;overflow-wrap:anywhere}
+.card-alternative{margin:0;font-family:inherit;font-size:14px;font-style:normal;font-weight:400;line-height:1.5;color:var(--ink-soft);white-space:pre-line;overflow-wrap:anywhere}
+@media(max-width:480px){.card-example{font-size:18px}.essential-decks .dcard{padding:18px}}

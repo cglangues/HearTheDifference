@@ -45,8 +45,16 @@
     <h1 class="lede">Words you can <em>see</em>, forms you can <em>say</em>.</h1>
     <p class="blurb">Pick a deck. Cards you find hard come back sooner; the ones you know wait longer.</p>
 
-    <h2 class="sect">Card decks</h2>
-    <div class="decks" id="decks"></div>
+    <section class="essential-collection" id="essential-collection" aria-labelledby="essentials-title" hidden>
+      <h2 class="sect" id="essentials-title">Les essentiels</h2>
+      <p class="collection-intro">Des mots et des expressions utiles au quotidien, à pratiquer à votre rythme.</p>
+      <div class="decks essential-decks" id="essential-decks"></div>
+    </section>
+
+    <details class="other-collections" id="other-collections">
+      <summary>Mes autres collections <span class="collection-count" id="other-count"></span></summary>
+      <div class="decks" id="decks"></div>
+    </details>
 
     <div class="sheets" id="sheets" style="display: none !important;"></div>
 

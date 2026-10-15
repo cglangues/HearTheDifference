@@ -9,14 +9,27 @@
 
   if (!data) {
     $('decks').innerHTML = '<p class="empty">study/data/study.js did not load.</p>';
+    if ($('other-collections')) $('other-collections').open = true;
     return;
   }
 
   var KIND = { picture: 'Picture cards', verb: 'Verb forms' };
 
+  function isEssential(deck) {
+    var name = String((deck.title || '') + ' ' + (deck.id || ''))
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return deck.essential === true || deck.collection === 'essentials' ||
+      /(^|[^a-z])(essentiels?|essentials?)([^a-z]|$)/.test(name);
+  }
+
   function renderDecks() {
     var host = $('decks');
+    var featured = $('essential-decks');
+    var featuredSection = $('essential-collection');
+    var otherSection = $('other-collections');
+    var featuredCount = 0, otherCount = 0;
     host.innerHTML = '';
+    if (featured) featured.innerHTML = '';
     data.decks.forEach(function (deck) {
       var total = S.usableCards(deck).length;
       if (!total) return; // an empty or unfinished deck is the editor's business
@@ -30,9 +43,25 @@
       a.querySelector('p').textContent = deck.blurb || '';
       a.querySelector('.counts').innerHTML = '<b>' + total + '</b> cards · Due <b>' + n.due +
         '</b> · New <b>' + n.fresh + '</b>';
-      host.appendChild(a);
+      if (featured && isEssential(deck)) {
+        a.querySelector('.kind').textContent = 'Collection essentielle';
+        a.appendChild(document.createElement('span')).className = 'deck-practise';
+        a.querySelector('.deck-practise').textContent = 'Pratiquer →';
+        featured.appendChild(a);
+        featuredCount++;
+      } else {
+        host.appendChild(a);
+        otherCount++;
+      }
     });
-    if (!host.children.length) host.innerHTML = '<p class="empty">No decks yet.</p>';
+    if (featuredSection) featuredSection.hidden = !featuredCount;
+    if ($('other-count')) $('other-count').textContent = '(' + otherCount + ')';
+    if (otherSection) {
+      otherSection.hidden = !otherCount && featuredCount > 0;
+      // With no essentials yet, keep all available decks immediately accessible.
+      if (!featuredCount) otherSection.open = true;
+    }
+    if (!featuredCount && !otherCount) host.innerHTML = '<p class="empty">No decks yet.</p>';
   }
 
   /* A published sheet is a plain link. A sheet still in the editor's draft
