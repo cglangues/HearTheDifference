@@ -28,6 +28,9 @@ var VERSION = 'htd-v2';
 var CORE = [
   './',
   'index.html',
+  'cg-langues-home.html',
+  'assets/js/practice.js',
+  'assets/css/practice.css',
   'manifest.webmanifest',
   'data/deck.js',
   'assets/js/deck.js',

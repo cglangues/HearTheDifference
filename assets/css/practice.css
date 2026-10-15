@@ -1,0 +1,4 @@
+/* Compact home practice summary, scoped to preserve existing page styles. */
+.practice-summary{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 20px;max-width:700px;margin:18px auto 10px;padding:14px 20px;border:1px solid #dce8e2;border-radius:16px;background:#f6f9f6;color:#343b3b;font:14px/1.5 Arial,Helvetica,sans-serif;text-align:center}
+.practice-current{font-size:16px}.practice-detail{font-size:12px;color:#596761}.practice-week{display:flex;gap:6px}.practice-day{display:grid;place-items:center;width:26px;height:26px;border:1px solid #d5dfd9;border-radius:50%;font-size:11px;background:#fff;color:#596761}.practice-day.done{background:#477968;border-color:#477968;color:#fff}.practice-day.today{outline:2px solid #d66c27;outline-offset:2px}.practice-message{flex-basis:100%;font-size:12px;color:#426456}
+@media(max-width:640px){.practice-summary{gap:10px;margin:16px auto;padding:12px}.practice-current,.practice-detail{flex-basis:100%}}

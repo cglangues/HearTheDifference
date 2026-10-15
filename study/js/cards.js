@@ -336,6 +336,7 @@
   }
 
   function afterReveal() {
+    if (window.CGPractice) window.CGPractice.record();
     $('reveal').classList.add('hidden');
     if (st.srs) {
       [].forEach.call($('rate').children, function (b) { b.querySelector('small').textContent = S.progress.preview(deck, st.cur, b.dataset.r); });

@@ -223,6 +223,7 @@ if (S.stats.done >= 16) return null;
   function choose(i) {
     if (S.answered) return;
     S.answered = true;
+    if (window.CGPractice) window.CGPractice.record();
     var c = S.cur, picked = S.opts[i];
     var correct = picked.toLowerCase() === c.answer.toLowerCase();
     S.lastCorrect = correct;
