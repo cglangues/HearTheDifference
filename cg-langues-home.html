@@ -58,7 +58,7 @@ dialog{width:min(490px,calc(100% - 32px));padding:34px;border:1px solid #e4e8e4;
 <a class="nav-item grammaire" href="#grammaire" data-section="grammaire"><h2>Grammaire <span class="arrow" aria-hidden="true">↗</span></h2><p>Comprenez la structure.<br>Passez à la pratique.</p></a>
 <a class="nav-item vocabulaire" href="#vocabulaire" data-section="vocabulaire"><h2>Vocabulaire <span class="arrow" aria-hidden="true">↗</span></h2><p>Découvrez, révisez.<br>Et retenez.</p></a>
 <a class="nav-item begin" href="#begin-guide" data-section="begin" role="button" aria-haspopup="dialog" aria-controls="begin-guide"><h2>Par où commencer ? <span class="arrow" aria-hidden="true">↗</span></h2></a>
-</nav>
+<a class="nav-item mes-ecoutes" href="mes-ecoutes.html"><h2>Mes écoutes <span class="arrow" aria-hidden="true">↗</span></h2><p>Vos textes en audio.<br>À écouter à votre rythme.</p></a></nav>
 <svg class="wordmark" viewBox="445 470 485 405" role="img" aria-label="CG Langues"><use href="#original"/></svg>
 <div class="bottom"><button class="replay" type="button">Rejouer l’animation</button></div>
 </main>
@@ -214,4 +214,7 @@ document.querySelector('.replay').addEventListener('click',()=>{
   };
 })();
 </script>
-</body></html>
+<style>
+.nav-item.expression-orale{left:calc(50% - 155px);width:270px}.nav-item.mes-ecoutes{top:495px;left:calc(50% + 155px);transform:translateX(-50%);width:270px;--color:#4b8d95;--tint:#edf5f4}.nav-item.mes-ecoutes:hover,.nav-item.mes-ecoutes:focus-visible{transform:translateX(-50%) translateY(-3px)}
+@media(max-width:640px){.nav-item.expression-orale{left:auto;grid-column:1;grid-row:5;width:auto}.nav-item.mes-ecoutes{position:static;left:auto;transform:none;width:auto;grid-column:2;grid-row:5}.nav-item.mes-ecoutes:hover,.nav-item.mes-ecoutes:focus-visible{transform:translateY(-3px)}}
+</style></body></html>
