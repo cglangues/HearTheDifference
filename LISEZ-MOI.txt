@@ -1,0 +1,61 @@
+ÉCOUTER UNE SCÈNE — INSTALLATION
+
+1. Décompressez le ZIP (clic droit > Extraire tout).
+2. Ouvrez le dossier extrait. Copiez les fichiers ecouter-une-scene.html,
+   scenes.css, scenes.js, scenes-data.js, scenes-editor.html et scenes-editor.js
+   à la racine de votre projet HearTheDifference : au même niveau que
+   cg-langues-home.html et prononciation.html. Ne les placez pas dans study.
+3. Copiez le sous-dossier assets/scenes dans le dossier assets existant.
+   Conservez vos autres sous-dossiers assets.
+4. Le fichier prononciation.html fourni contient le nouveau bouton.
+   Il est basé sur votre version du 14 octobre disponible ici. Si votre fichier
+   local a évolué depuis, conservez-le : ouvrez-le dans votre éditeur,
+   recherchez </nav> juste avant </main> et collez AVANT ce </nav> :
+
+   <a class="card" href="ecouter-une-scene.html">
+     <h2>Écouter une scène</h2>
+     <p class="description">Observez une image et écoutez sa description.</p>
+     <span class="cta">Explorer les scènes →</span>
+   </a>
+
+   Sinon, sauvegardez votre ancien prononciation.html et utilisez celui fourni.
+5. Commit et Push dans GitHub Desktop. Attendez la publication GitHub Pages.
+6. Depuis votre application : Sons et prononciation > Écouter une scène.
+
+LIEN DEPUIS VOCABULAIRE (OPTIONNEL)
+Dans la page HTML de vocabulaire située dans study, ajoutez dans la zone
+visible, par exemple juste avant </main> :
+<a href="../ecouter-une-scene.html">Écouter les mots dans une scène →</a>
+Si votre page de vocabulaire est à la racine, enlevez ../ du lien.
+Ce lien ne modifie ni les decks ni leurs statistiques.
+
+AJOUTER VOTRE VOIX ET MODIFIER LES TEXTES
+1. Ouvrez scenes-editor.html dans votre navigateur (double-clic local possible).
+2. Sélectionnez une scène. Modifiez son texte, son titre ou sa question.
+3. Enregistrez la description avec votre dictaphone, puis sélectionnez le fichier
+   audio dans l'éditeur. MP3 recommandé. Les scripts sont fournis dans
+   Scripts-enregistrement.txt. Environ 50–65 secondes à un débit posé.
+4. Répétez pour les autres scènes si vous le souhaitez.
+5. Cliquez sur « Télécharger scenes-data.js ». Cela exporte les SIX scènes
+   et tous leurs audios, pas uniquement la scène affichée.
+6. Déplacez le téléchargement dans votre projet et remplacez scenes-data.js.
+   Si le navigateur l'appelle scenes-data (1).js, renommez-le scenes-data.js.
+7. Rechargez l'activité pour tester, puis Commit et Push.
+
+IMPORTANT
+L'éditeur ne publie rien tout seul. Les changements non exportés sont perdus
+si vous fermez l'onglet. Rechargez l'éditeur après remplacement du fichier.
+Il n'y a pas d'audio enregistré dans cette première version ; les lecteurs
+apparaissent dès que vous ajoutez vos enregistrements. Pas de voix synthétique.
+Les images restent visibles ; seul le panneau texte défile. Le texte se masque
+à chaque changement de scène. La vitesse s'applique à l'audio réel.
+Les six scènes utilisent du vocabulaire quotidien A2–B1 ; elles ne sont pas
+synchronisées automatiquement avec les cartes ou les compteurs existants.
+Les images sont originales, générées par IA. Les scripts sont modifiables.
+L'éditeur est un outil local, sans authentification. Il n'est pas nécessaire de
+publier scenes-editor.html et scenes-editor.js sur GitHub pour les élèves.
+
+CONTENU
+Cuisine, pique-nique, linge, valise, café sous la pluie, jardin.
+Chaque scène : image, script, vocabulaire bilingue, question et réponse.
+Aucun changement du cercle d'accueil n'est nécessaire.
