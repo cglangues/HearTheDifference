@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#ffffff">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CG Langues — Anglais en autonomie</title>
-<meta name="description" content="Prononciation, lecture, vocabulaire et grammaire : explorez votre anglais avec CG Langues.">
+<meta name="description" content="Prononciation, lecture, vocabulaire, expression écrite et grammaire : explorez votre anglais avec CG Langues.">
 <style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#343b3b;background:#fff;font-synthesis:none;--ink:#343b3b;--muted:#6b7573;--teal:#4b8d95;--lime:#909b21;--orange:#d66c27;--pink:#ad567f}
 *{box-sizing:border-box}body{margin:0}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit}button{font:inherit}button,a{touch-action:manipulation}a:focus-visible,button:focus-visible{outline:3px solid #264e62;outline-offset:6px}button{cursor:pointer}[hidden]{display:none!important}
@@ -43,7 +43,9 @@ dialog{width:min(490px,calc(100% - 32px));padding:34px;border:1px solid #e4e8e4;
 </script>
 <script src="assets/js/practice.js"></script>
 <link rel="stylesheet" href="assets/css/practice.css">
-</head>
+<style>
+.new-practice{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:860px;margin:0 auto 30px}.practice-card{display:block;text-decoration:none;border:1px solid #dfe8e2;border-radius:16px;padding:24px;transition:transform .2s,background .2s}.practice-card:hover{transform:translateY(-3px);background:#f8faf7}.practice-card h2{font-family:Georgia,serif;font-weight:400;font-size:25px;letter-spacing:-.5px;margin:15px 0 12px}.practice-card h2 span{float:right;color:#4b8d95}.practice-card p{font-size:14px;color:#606d69;line-height:1.7}.practice-kicker{font-size:10px;letter-spacing:1.3px;color:#606d69}.practice-action{display:block;font-size:13px;line-height:1.6;font-weight:600;margin-top:18px;color:#32666c}.writing{border-top:4px solid #76619e}.ask-conor{border-top:4px solid #4b8d95}@media(max-width:640px){.new-practice{grid-template-columns:1fr;margin-top:22px;gap:14px}.practice-card{padding:20px}}
+</style></head>
 <body>
 <div class="shell">
 <header class="topbar"><a class="brand" href="#" aria-label="CG Langues, accueil">CG <span>Langues</span></a><span class="edition">Votre espace d’anglais</span></header>
@@ -59,6 +61,11 @@ dialog{width:min(490px,calc(100% - 32px));padding:34px;border:1px solid #e4e8e4;
 <a class="nav-item vocabulaire" href="#vocabulaire" data-section="vocabulaire"><h2>Vocabulaire <span class="arrow" aria-hidden="true">↗</span></h2><p>Découvrez, révisez.<br>Et retenez.</p></a>
 <a class="nav-item begin" href="#begin-guide" data-section="begin" role="button" aria-haspopup="dialog" aria-controls="begin-guide"><h2>Par où commencer ? <span class="arrow" aria-hidden="true">↗</span></h2></a>
 <a class="nav-item mes-ecoutes" href="mes-ecoutes.html"><h2>Mes écoutes <span class="arrow" aria-hidden="true">↗</span></h2><p>Vos textes en audio.<br>À écouter à votre rythme.</p></a></nav>
+
+<section class="new-practice" aria-label="Écrire et poser une question">
+<a class="practice-card writing" href="expression-ecrite.html"><span class="practice-kicker">PRENDRE LE TEMPS DE S’EXPRIMER</span><h2>Expression écrite <span aria-hidden="true">↗</span></h2><p>Quelques idées pour démarrer.<br>Un journal pour trouver vos mots.</p><span class="practice-action">Ouvrir mon journal →</span></a>
+<a class="practice-card ask-conor" href="questions.html"><span class="practice-kicker">UNE QUESTION SUR L’ANGLAIS ?</span><h2>Les réponses de Conor <span aria-hidden="true">↗</span></h2><p>Posez votre question.<br>Découvrez les réponses partagées, sans aucun nom publié.</p><span class="practice-action">Poser une question ou lire les réponses →</span></a>
+</section>
 <svg class="wordmark" viewBox="445 470 485 405" role="img" aria-label="CG Langues"><use href="#original"/></svg>
 <div class="bottom"><button class="replay" type="button">Rejouer l’animation</button></div>
 </main>
@@ -72,6 +79,7 @@ dialog{width:min(490px,calc(100% - 32px));padding:34px;border:1px solid #e4e8e4;
 <a class="guide-choice" href="study/index.html#decks" style="--color:var(--orange)"><strong>Trouver vos mots →</strong><span>Enrichissez et révisez votre vocabulaire.</span></a>
 <a class="guide-choice" href="lecture.html" style="--color:var(--lime)"><strong>Comprendre un texte →</strong><span>Lisez avec une aide pour les mots inconnus.</span></a>
 <a class="guide-choice" href="grammaire.html#sheets" style="--color:var(--pink)"><strong>Construire vos phrases →</strong><span>Travaillez les structures utiles.</span></a>
+<a class="guide-choice" href="expression-ecrite.html" style="--color:#76619e"><strong>Exprimer vos idées par écrit →</strong><span>Prenez le temps d’écrire quelques phrases dans votre journal.</span></a>
 </div>
 </dialog>
 <dialog id="section-preview" aria-labelledby="section-title" aria-describedby="section-description">
